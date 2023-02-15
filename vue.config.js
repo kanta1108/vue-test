@@ -8,7 +8,7 @@ module.exports = defineConfig({
     loaderOptions: {
       scss: {
         additionalData: `
-        @import "@/assets/sass/prepend.scss";
+        @use "@/assets/sass/prepend.scss";
         `,
       },
     },
