@@ -1,0 +1,9 @@
+@use "./base/reset" as *;
+@use "./abstracts/variables" as *;
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
