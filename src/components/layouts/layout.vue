@@ -5,6 +5,6 @@
 </template>
 <style lang="scss" scoped>
 .main {
-  padding-inline: $main-pad;
+  padding-inline: $layout-pad;
 }
 </style>

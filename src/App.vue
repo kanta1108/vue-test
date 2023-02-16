@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import "normalize.css";
 import Header from "./components/_Header.vue";
 import Kv from "./components/_Kv.vue";
 import Layout from "./components/layouts/layout.vue";
