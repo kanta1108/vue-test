@@ -1,10 +1,10 @@
 <template>
-  <div class="main">
+  <div class="main-layout">
     <slot></slot>
   </div>
 </template>
 <style lang="scss" scoped>
-.main {
+.main-layout {
   padding-inline: $layout-pad;
 }
 </style>

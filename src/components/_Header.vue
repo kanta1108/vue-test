@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <HeaderLogo></HeaderLogo>
-    <HeaderNav></HeaderNav>
+    <HeaderNav :navPlace="navPlace"></HeaderNav>
   </header>
 </template>
 <script>
@@ -12,6 +12,11 @@ export default {
     HeaderLogo: logo,
     HeaderNav: nav,
   },
+  data() {
+    return {
+      navPlace: "headerNav",
+    };
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -19,5 +24,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 10vh;
 }
 </style>

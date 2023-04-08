@@ -1,28 +1,36 @@
 <template>
-  <nav class="nav">
-    <ul class="nav__ul">
-      <li class="nav__ul--li" v-for="list in lists" :key="list.title">
-        <router-link :to="list.title">{{ list.title }}</router-link>
-      </li>
+  <nav :class="navPlace">
+    <ul :class="navPlace + '__ul'">
+      <transition-group name="slideUp" appear @before-enter="beforeEnter">
+        <li
+          :class="navPlace + '__ul--li'"
+          v-for="(list, index) in lists"
+          :key="index">
+          <router-link :to="list">{{ list }}</router-link>
+        </li>
+      </transition-group>
     </ul>
   </nav>
 </template>
 <script>
 export default {
+  props: ["navPlace"],
   data() {
     return {
-      lists: [
-        { title: "home" },
-        { title: "about" },
-        { title: "news" },
-        { title: "contact" },
-      ],
+      lists: ["home", "about", "gallery", "skills"],
+      count: 0,
     };
+  },
+  methods: {
+    beforeEnter(el) {
+      el.style.animationDelay = `${this.count}s`;
+      this.count += 0.1;
+    },
   },
 };
 </script>
 <style lang="scss" scoped>
-.nav {
+.headerNav {
   &__ul {
     display: flex;
     flex-direction: row;
@@ -30,9 +38,58 @@ export default {
     align-items: center;
     gap: 5vw;
     &--li {
-      font-size: 24px;
+      font-size: 35px;
       font-weight: bold;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background-color: $black;
+        opacity: 0.7;
+        transition: width 0.5s ease-in-out;
+      }
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
     }
+  }
+}
+.footerNav {
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    &--li {
+      font-size: 30px;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
+
+.slideUp-enter-active {
+  animation-name: kf-animation-slideUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+@keyframes kf-animation-slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>
