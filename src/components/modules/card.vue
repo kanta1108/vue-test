@@ -14,7 +14,7 @@ export default {
 <style lang="scss" scoped>
 .card {
   width: 100%;
-  box-shadow: 10px 10px 30px #000;
+  box-shadow: 0 0 20px #222;
   overflow: hidden;
   object-fit: cover;
   position: relative;

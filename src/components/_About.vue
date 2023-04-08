@@ -72,7 +72,7 @@ export default {
 <style lang="scss" scoped>
 .about {
   &__inner {
-    margin-block-start: 5vw;
+    padding-block: 5vw;
     display: flex;
     flex-direction: column;
     gap: 5vw;

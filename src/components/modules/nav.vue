@@ -6,7 +6,7 @@
           :class="navPlace + '__ul--li'"
           v-for="(list, index) in lists"
           :key="index">
-          <router-link :to="list">{{ list }}</router-link>
+          <router-link :to="list" class="link">{{ list }}</router-link>
         </li>
       </transition-group>
     </ul>
@@ -42,20 +42,14 @@ export default {
       font-weight: bold;
       letter-spacing: 0.1em;
       cursor: pointer;
-
-      &::after {
-        content: "";
-        display: block;
-        width: 0;
-        height: 2px;
-        background-color: $black;
-        opacity: 0.7;
-        transition: width 0.5s ease-in-out;
-      }
       &:hover {
-        &::after {
-          width: 100%;
+        .link {
+          opacity: 1;
         }
+      }
+      .link {
+        opacity: 0.5;
+        transition: opacity 0.5s linear;
       }
     }
   }

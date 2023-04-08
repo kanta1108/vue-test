@@ -6,5 +6,6 @@
 <style lang="scss" scoped>
 .main-layout {
   padding-inline: $layout-pad;
+  overflow: hidden;
 }
 </style>
