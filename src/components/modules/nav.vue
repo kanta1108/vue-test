@@ -6,7 +6,9 @@
           :class="navPlace + '__ul--li'"
           v-for="(list, index) in lists"
           :key="index">
-          <router-link :to="list" class="link">{{ list }}</router-link>
+          <router-link :to="{ name: list }" class="link">{{
+            list
+          }}</router-link>
         </li>
       </transition-group>
     </ul>
@@ -14,10 +16,10 @@
 </template>
 <script>
 export default {
-  props: ["navPlace"],
+  props: ['navPlace'],
   data() {
     return {
-      lists: ["home", "about", "gallery", "skills"],
+      lists: ['home', 'about', 'gallery', 'skills'],
       count: 0,
     };
   },
@@ -38,7 +40,7 @@ export default {
     align-items: center;
     gap: 5vw;
     &--li {
-      font-size: 35px;
+      font-size: 30px;
       font-weight: bold;
       letter-spacing: 0.1em;
       cursor: pointer;

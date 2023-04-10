@@ -9,14 +9,14 @@
   </footer>
 </template>
 <script>
-import Layout from "./layouts/layout.vue";
-import nav from "./modules/nav.vue";
-import Map from "./modules/map.vue";
+import Layout from './layouts/layout.vue';
+import nav from './modules/nav.vue';
+import Map from './modules/map.vue';
 export default {
   components: { Layout, FooterNav: nav, Map },
   data() {
     return {
-      navPlace: "footerNav",
+      navPlace: 'footerNav',
     };
   },
 };
@@ -36,6 +36,7 @@ export default {
 
     .map {
       width: 50%;
+      display: none;
     }
   }
 }

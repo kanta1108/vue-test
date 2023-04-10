@@ -10,14 +10,14 @@
   </slide>
 </template>
 <script>
-import card from "./card.vue";
-import slide from "../animation-components/slide.vue";
+import card from './card.vue';
+import slide from '../animation-components/slide.vue';
 export default {
   components: {
     card,
     slide,
   },
-  props: ["paragraph", "isReverse", "cardNumber", "direction"],
+  props: ['paragraph', 'isReverse', 'cardNumber', 'direction'],
   data() {
     return {
       slideProps: {

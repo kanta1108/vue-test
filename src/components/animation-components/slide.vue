@@ -4,8 +4,8 @@
   </transition>
 </template>
 <script>
-import gsap from "gsap";
-import scrollTrigger from "gsap/ScrollTrigger";
+import gsap from 'gsap';
+import scrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(scrollTrigger);
 export default {
   props: {
@@ -43,7 +43,7 @@ export default {
           opacity: 1,
           scrollTrigger: {
             trigger: el,
-            start: "top 90%",
+            start: 'top 90%',
           },
         }
       );

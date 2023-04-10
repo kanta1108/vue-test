@@ -5,7 +5,7 @@
 </template>
 <style lang="scss" scoped>
 .logo {
-  width: 5vw;
+  width: 40px;
 
   img {
     max-width: 100%;

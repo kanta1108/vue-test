@@ -1,4 +1,4 @@
-@import "./variavles";
+@import './variavles';
 
 * {
   margin: 0;
@@ -16,12 +16,17 @@ li {
 }
 a {
   text-decoration: none;
+  color: inherit;
+
+  &:visited,
+  &:active {
+    color: inherit;
+  }
 }
 img {
   max-width: 100%;
   height: 100%;
 }
-
 .section {
   padding-block-start: 10vw;
 }
